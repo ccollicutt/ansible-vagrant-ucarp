@@ -1,6 +1,6 @@
 # ucarp
 
-This is a ucarp demo environment. Ucarp is interesting...it comes from OpenBSD's carp system I believe. Yay OpenBSD! But in this repository we're using Ubuntu linux.
+This is a ucarp demo environment. Ucarp is interesting...it comes from OpenBSD's carp system I believe. Yay OpenBSD! But in this repository we're using Ubuntu Linux.
 
 Using Vagrant and Ansible (as per usual) this repository will bring up three small Ubuntu Trusty nodes and configure them using Ucarp to have a couple of virtual IP addresses...one on the "external" network and one on the "internal" network.
 
@@ -75,3 +75,5 @@ zone0 | success | rc=0 >>
 eth1:ucarp Link encap:Ethernet  HWaddr 08:00:27:76:09:41  
 UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 ```
+
+That's it. Pretty straighfoward to configure virtual IPs.
