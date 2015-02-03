@@ -76,4 +76,4 @@ eth1:ucarp Link encap:Ethernet  HWaddr 08:00:27:76:09:41
 UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 ```
 
-That's it. Pretty straighfoward to configure virtual IPs.
+That's it. Ucarp is a pretty straight foward way to configure virtual IPs.
