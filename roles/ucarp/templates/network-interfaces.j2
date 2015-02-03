@@ -1,0 +1,45 @@
+# version 3
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet dhcp
+pre-up sleep 2
+
+# The primary network interface
+auto {{ external_interface | mandatory }}
+iface {{ external_interface | mandatory }} inet static
+  address  {{ external_ip | mandatory }}
+  netmask  {{ external_netmask | default('255.255.255.0')}}
+  broadcast {{ extern}}
+  ucarp-vid      {{ ucarp_external_vid }}
+  ucarp-vip      {{ ucarp_external_vip | mandatory }}
+  ucarp-password {{ ucarp_external_shared_secret | mandatory }}
+  ucarp-advskew  {{ ucarp_external_advskew | default(20) }}
+  ucarp-advbase  {{ ucarp_external_advbase | default(1) }}
+  ucarp-master   {{ ucarp_external_master | default('no') }}
+
+auto  {{ external_interface }}:ucarp
+iface {{ external_interface }}:ucarp inet static
+        address {{ ucarp_external_vip }}
+        netmask 255.255.255.255
+
+# The primary network interface
+auto {{ internal_interface | mandatory }}
+iface {{ internal_interface | mandatory }} inet static
+  address  {{ internal_ip | mandatory }}
+  netmask  {{ internal_netmask | default('255.255.255.0')}}
+  ucarp-vid      {{ ucarp_internal_vid }}
+  ucarp-vip      {{ ucarp_internal_vip | mandatory }}
+  ucarp-password {{ ucarp_internal_shared_secret | mandatory }}
+  ucarp-advskew  {{ ucarp_internal_advskew | default(20) }}
+  ucarp-advbase  {{ ucarp_internal_advbase | default(1) }}
+  ucarp-master   {{ ucarp_internal_master | default('no') }}
+
+auto  {{ internal_interface }}:ucarp
+iface {{ internal_interface }}:ucarp inet static
+        address {{ ucarp_internal_vip }}
+        netmask 255.255.255.255

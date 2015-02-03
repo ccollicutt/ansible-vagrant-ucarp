@@ -1,0 +1,7 @@
+---
+
+external_ip: 172.100.0.101
+ucarp_external_advskew: 20
+
+internal_ip: 172.200.0.101
+ucarp_internal_advskew: 20

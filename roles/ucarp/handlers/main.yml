@@ -1,0 +1,5 @@
+---
+
+- name: restart network
+  shell: ifdown {{ item }}; ifup {{ item }}
+  with_items: interfaces

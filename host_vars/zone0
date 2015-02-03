@@ -1,0 +1,9 @@
+---
+
+ucarp_external_master: "yes"
+external_ip: 172.100.0.100
+ucarp_external_advskew: 10
+
+ucarp_internal_master: "yes"
+internal_ip: 172.200.0.100
+ucarp_internal_advskew: 10

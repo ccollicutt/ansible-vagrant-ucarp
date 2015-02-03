@@ -1,0 +1,20 @@
+---
+
+external_interface: eth1
+external_gateway: 172.100.0.1
+external_netmask: 255.255.255.0
+ucarp_external_vid: 1
+ucarp_external_shared_secret: YOUSHOULDCHANGETHIS
+ucarp_external_vip: 172.100.0.10
+
+internal_interface: eth2
+internal_gateway: 172.200.0.1
+internal_netmask: 255.255.255.0
+ucarp_internal_vid: 1
+ucarp_internal_shared_secret: CHANGETHISTOO
+ucarp_internal_vip: 172.200.0.10
+
+# how to use interfaces in the above variables?
+interfaces:
+  - eth1
+  - eth2

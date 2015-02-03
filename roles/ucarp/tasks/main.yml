@@ -1,0 +1,16 @@
+---
+
+- name: ensure ucarp is installed
+  apt: >
+    name=ucarp
+    state=present
+
+- debug: msg="{{ item }}"
+  with_items: interfaces
+
+- name: install network interfaces file from template
+  template:
+    src=network-interfaces.j2
+    dest=/etc/network/interfaces
+  notify:
+    - restart network
