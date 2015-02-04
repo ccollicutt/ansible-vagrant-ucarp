@@ -14,7 +14,6 @@ auto {{ external_interface | mandatory }}
 iface {{ external_interface | mandatory }} inet static
   address  {{ external_ip | mandatory }}
   netmask  {{ external_netmask | default('255.255.255.0')}}
-  broadcast {{ extern}}
   ucarp-vid      {{ ucarp_external_vid }}
   ucarp-vip      {{ ucarp_external_vip | mandatory }}
   ucarp-password {{ ucarp_external_shared_secret | mandatory }}
